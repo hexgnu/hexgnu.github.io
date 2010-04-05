@@ -1,0 +1,15 @@
+---
+     environment: production
+     chdir: "/www/projects/sinatra-hello-world"
+     address: 127.0.0.1
+     user: root
+     group: admin
+     port: 4567
+     pid: "/www/projects/sinatra-hello-world/configs/thin.pid"
+     rackup: "/www/projects/sinatra-hello-world/configs/config.ru"
+     log: "/www/projects/sinatra-hello-world/log/thin.log"
+     max_conns: 1024
+     timeout: 30
+     servers: 1
+     max_persistent_conns: 512
+     daemonize: false
