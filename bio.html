@@ -8,8 +8,48 @@
         width: 60em;
     }
 
-    body {
-        width: 800px;
+    * {
+        font-family: 'Helvetica Neue', helvetica, sans-serif;
+    }
+
+    h3 {
+        margin-left: 2em;
+        padding: 1em;
+        margin-right: 1em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    .blue {
+        background-color: #57C1D1;
+    }
+
+    .yellow {
+        background-color: #F2C800;
+    }
+
+    .black {
+        background-color: #000;
+        color: #eee;
+    }
+
+    .green {
+        background-color: #299F38;
+    }
+
+    .grey {
+        background-color: #8D9EA6;
+    }
+
+    p {
+        margin-left: 4em;
+        margin-right: 2em;
+    }
+    .about {
+        width: 80em;
+        background-color: #DDE0D5;
     }
 </style>
 
@@ -51,7 +91,7 @@
     var length = toPx(80);
 
     // Creates canvas 320 × 200 at 10, 50
-     var paper = Raphael(document.getElementById("timeline"), length, toPx(18));
+     var paper = Raphael(document.getElementById("timeline"), length, toPx(16.5));
      var timelineChr = paper.path("M" + width + " " + (width + mult + 10) + "H" + (length - width - 10));
      timelineChr.attr("stroke-width", width);
 
@@ -73,8 +113,7 @@
         var shift = meep * (mult + width);
         var x = 2.5 * mult * (year - startYear) + shift;
         var y = toPx(2.1875);
-        var accText = paper.text(x + toPx(parseInt(times)*meep) - toPx(meep * meep) + toPx(1), 0, accomplishment).attr({'font-size': 12, "text-anchor": "end"});
-        console.log(accText.getBBox().width);
+        var accText = paper.text(x + toPx(parseInt(times)*meep) - toPx(meep * meep) + toPx(1), 0, accomplishment).attr({'font-size': 12, "text-anchor": "end", 'font-family': '"Helvetica Neue", helvetica, sans-serif'});
         accText.attr({"y": toPx(4.5) + accText.getBBox().width / 2.5});
         accText.rotate(270+45);
 
@@ -84,8 +123,7 @@
 
       
         var circle = paper.circle(x, y, meep * mult);
-        var text = paper.text(x,y, year);
-        text.attr({'font-size': 12, 'font-family': 'FranklinGothicFSCondensed-1, FranklinGothicFSCondensed-2'});
+        var text = paper.text(x,y, year).attr({'font-size': 12, 'font-family': '"Helvetica Neue", helvetica, sans-serif'});
         circle.attr({fill: "#DDD", stroke: "#000", "stroke-width": 10, "stroke-opacity": 0.5})
         circle.hover(function() {
             this.attr({"stroke": "#ff0"})
@@ -97,19 +135,37 @@
     }
 </script>
 
+<div class='about'>
+    <h2>Matt Kirk is:</h2>
 
-<h2>Matt Kirk is:</h2>
+    <h3 class='blue'>Analytical:</h3>
 
-<ul>
-    <li>Analytical:
-        <p>I love to deconstruct everything.</p>  
-        <p>When I was 7, I took my parents' VCR apart.  They got upset.  They cooled off when I put it back together for them again and it worked.</p>  
-        <p>When I went to the University of Washington I earned both a mathematics degree and quantitative economics degree.</p>  
-        <p>My career started doing quantitative finance research.  My research was on the effects of volatility on tax-loss harvesting as well as momentum and reversal in emergent economies.  The initial research I did has turned into a Russell Index called CrossVol (crossvol.com).</p>  
-        <p>Data production is growing at an alarming rate.  My skill with analysis can help you become more adept with data.</p>
-    </li>
-    <li>Focused</li>
-    <li>Competitive</li>
-    <li>Productive</li>
-    <li>Self-Taught</li>
-</ul>
+    <p>I love to deconstruct everything.</p>  
+    <p>When I was 7, I took my parents' VCR apart.  They got upset.  They cooled off when I put it back together for them again and it worked.</p>  
+    <p>When I went to the University of Washington I earned both a mathematics degree and quantitative economics degree.</p>  
+    <p>My career started doing quantitative finance research.  My research was on the effects of volatility on tax-loss harvesting as well as momentum and reversal in emergent economies.  The initial research I did has turned into a Russell Index called CrossVol (crossvol.com).</p>  
+    <p>Data production is growing at an alarming rate.  My skill with analysis can help you become more adept with data.</p>
+
+    <h3 class='yellow'>Focused:</h3>
+
+    <p>I focus on what matters.  When I was in school, I was so focused to deliver my best work, I decided to typeset all my work with LaTeX.  This took me twice as long to complete but it was the best I could do and I was focused on delivering the best work possible.</p>
+    <p>Teams need focus.  I can help a team overcome challenges by focusing on what matters, results.</p>
+
+    <h3 class='grey'>Competitive</h3>
+
+    <p>I love competition.  Not because I must win but because I love the motivation it provides.</p>
+    <p>When I was in Boy Scouts, instead of worrying about my competition I just completed Eagle Scout and ended up being one of two to complete it by age 13.</p>
+    <p>Business is competitive.  I have the ability to win through unfair means by analyzing data and focusing on what actually matters.</p>
+
+    <h3 class='green'>Productive</h3>
+
+    <p>I love to produce.  All things come down to delivering value to my customers.</p>
+    <p>My family owned an auto parts store and I learned that it’s always important to be producing value.  We also learned the lessons of keeping costs down, whether they be tangible or intangble so to give more room to grow.</p>
+    <p>My work ethic comes from years of pushing to get things done and will help you by always delivering something of value.</p>
+
+    <h3 class='black'>Self-Taught</h3>
+
+    <p>I love to read.  When I was 9 I read The C Programming language.  I didn’t understand all of it but wanted to learn more about how computers worked.  I am constantly reading to learn more from others.</p>
+
+    <p>Being able to ask “Why?” and to determine the real reasons behind things can help any business to learn overtime and to always be improving.</p>
+</div>
