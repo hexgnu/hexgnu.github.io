@@ -2,7 +2,7 @@
 title = "About"
 +++
 
-Hello world, it's me, Matt.
+Hello world, it's me, Matt. It's nice to be here.
 <!--
 ## About Me
 
